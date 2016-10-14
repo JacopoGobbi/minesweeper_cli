@@ -121,15 +121,22 @@ void CreaPrato() {
 	unsigned short int i, j;
 	for(i = 0; i < Max; ++i)
 		for(j = 0; j < Max; ++j) {
-			if(((random(0, 100)) < prob) && (i > 1 && j > 1)) {
+			if( (random(0, 100) < prob) && (i > 1 && j > 1) ) {
 				matrice[i][j] = bomba;
 				bombe++;
 			}
-			else
+
+			matrice2[i][j] = '-';
+		}
+	for(i = 0; i < Max; ++i)
+		for(j = 0; j < Max; ++j) {
+
+			if(matrice[i][j] != bomba)
 				matrice[i][j] = (48 + ScriviN(i, j));
+
 			if(matrice[i][j] == '0')
 				matrice[i][j] = ' ';
-			matrice2[i][j] = '-';
+
 		}
 }
 
@@ -236,7 +243,11 @@ void AmpliaSpazio(unsigned short righe, unsigned short colonne) {
 			matrice[righe][colonne] = '/';
 
 			if((righe - 1) >= 0) {
-				if((matrice[righe-1][colonne] != bomba) && (matrice[righe-1][colonne] != '/') && (matrice[righe-1][colonne] != '*')) {
+				if (
+					(matrice[righe-1][colonne] != bomba) &&
+					(matrice[righe-1][colonne] != '/') &&
+					(matrice[righe-1][colonne] != '*')
+				) {
 					if(matrice[righe-1][colonne] == ' ')
 						AmpliaSpazio((righe-1), colonne);
 					else
@@ -245,7 +256,11 @@ void AmpliaSpazio(unsigned short righe, unsigned short colonne) {
 			}
 
 			if((colonne - 1) >= 0) {
-				if((matrice[righe][colonne-1] != bomba) && (matrice[righe][colonne-1] != '/') && (matrice[righe][colonne-1] != '*')) {
+				if (
+					(matrice[righe][colonne-1] != bomba) &&
+					(matrice[righe][colonne-1] != '/') &&
+					(matrice[righe][colonne-1] != '*')
+				) {
 					if(matrice[righe][colonne-1] == ' ')
 						AmpliaSpazio(righe, (colonne-1));
 					else
@@ -254,7 +269,11 @@ void AmpliaSpazio(unsigned short righe, unsigned short colonne) {
 			}
 
 			if(((colonne - 1) >= 0) && ((righe - 1) >= 0)) {
-				if((matrice[righe-1][colonne-1] != bomba) && (matrice[righe-1][colonne-1] != '/') && (matrice[righe-1][colonne-1] != '*')) {
+				if (
+					(matrice[righe-1][colonne-1] != bomba) &&
+					(matrice[righe-1][colonne-1] != '/') &&
+					(matrice[righe-1][colonne-1] != '*')
+				) {
 					if(matrice[righe-1][colonne-1] == ' ')
 						AmpliaSpazio((righe-1), (colonne-1));
 					else
@@ -263,7 +282,11 @@ void AmpliaSpazio(unsigned short righe, unsigned short colonne) {
 			}
 
 			if((righe + 1) < Max) {
-				if((matrice[righe+1][colonne] != bomba) && (matrice[righe+1][colonne] != '/') && (matrice[righe+1][colonne] != '*')) {
+				if (
+					(matrice[righe+1][colonne] != bomba) &&
+					(matrice[righe+1][colonne] != '/') &&
+					(matrice[righe+1][colonne] != '*')
+				) {
 					if(matrice[righe+1][colonne] == ' ')
 						AmpliaSpazio((righe+1), colonne);
 					else
@@ -272,7 +295,11 @@ void AmpliaSpazio(unsigned short righe, unsigned short colonne) {
 			}
 
 			if((colonne + 1) < Max) {
-				if((matrice[righe][colonne+1] != bomba) && (matrice[righe][colonne+1] != '/') && (matrice[righe][colonne+1] != '*')) {
+				if (
+					(matrice[righe][colonne+1] != bomba) &&
+					(matrice[righe][colonne+1] != '/') &&
+					(matrice[righe][colonne+1] != '*')
+				) {
 					if(matrice[righe][colonne+1] == ' ')
 						AmpliaSpazio(righe, (colonne+1));
 					else
@@ -281,7 +308,11 @@ void AmpliaSpazio(unsigned short righe, unsigned short colonne) {
 			}
 
 			if(((colonne + 1) < Max) && ((righe + 1) < Max)) {
-				if((matrice[righe+1][colonne+1] != bomba) && (matrice[righe+1][colonne+1] != '/') && (matrice[righe+1][colonne+1] != '*')) {
+				if (
+					(matrice[righe+1][colonne+1] != bomba) &&
+					(matrice[righe+1][colonne+1] != '/') &&
+					(matrice[righe+1][colonne+1] != '*')
+				) {
 					if(matrice[righe+1][colonne+1] == ' ')
 						AmpliaSpazio((righe+1), (colonne+1));
 					else
@@ -290,7 +321,11 @@ void AmpliaSpazio(unsigned short righe, unsigned short colonne) {
 			}
 
 			if(((colonne + 1) < Max) && ((righe - 1) >= 0)) {
-				if((matrice[righe-1][colonne+1] != bomba) && (matrice[righe-1][colonne+1] != '/') && (matrice[righe-1][colonne+1] != '*')) {
+				if (
+					(matrice[righe-1][colonne+1] != bomba) &&
+					(matrice[righe-1][colonne+1] != '/') &&
+					(matrice[righe-1][colonne+1] != '*')
+				) {
 					if(matrice[righe-1][colonne+1] == ' ')
 						AmpliaSpazio((righe-1), (colonne+1));
 					else
@@ -299,7 +334,11 @@ void AmpliaSpazio(unsigned short righe, unsigned short colonne) {
 			}
 
 			if(((colonne - 1) >= 0) && ((righe + 1) < Max)) {
-				if((matrice[righe+1][colonne-1] != bomba) && (matrice[righe+1][colonne-1] != '/') && (matrice[righe+1][colonne-1] != '*')) {
+				if (
+					(matrice[righe+1][colonne-1] != bomba) &&
+					(matrice[righe+1][colonne-1] != '/') &&
+					(matrice[righe+1][colonne-1] != '*')
+				) {
 					if(matrice2[righe+1][colonne-1] == ' ')
 						AmpliaSpazio((righe+1), (colonne-1));
 					else
@@ -315,23 +354,38 @@ unsigned short ScriviN(unsigned short righe, unsigned short colonne) {
 	unsigned short int n;
 	n = 0;
 	if((righe - 1) >= 0)
-		if(matrice[righe-1][colonne] == bomba) n++;
+		if(matrice[righe-1][colonne] == bomba)
+			n++;
+
 	if((colonne - 1) >= 0)
-		if(matrice[righe][colonne-1] == bomba) n++;
+		if(matrice[righe][colonne-1] == bomba)
+			n++;
+
 	if(((colonne - 1) >= 0) && ((righe - 1) >= 0))
-		if(matrice[righe-1][colonne-1] == bomba) n++;
+		if(matrice[righe-1][colonne-1] == bomba)
+			n++;
 
 	if((righe + 1) < maxtab)
-		if(matrice[righe+1][colonne] == bomba) n++;
+		if(matrice[righe+1][colonne] == bomba)
+			n++;
+
 	if((colonne + 1) < maxtab)
-		if(matrice[righe][colonne+1] == bomba) n++;
+		if(matrice[righe][colonne+1] == bomba)
+			n++;
+
 	if(((colonne + 1) < maxtab) && ((righe + 1) < maxtab))
-		if(matrice[righe+1][colonne+1] == bomba) n++;
+		if(matrice[righe+1][colonne+1] == bomba)
+			n++;
 
 	if(((colonne + 1) < maxtab) && ((righe - 1) >= 0))
-		if(matrice[righe-1][colonne+1] == bomba) n++;
+		if(matrice[righe-1][colonne+1] == bomba)
+			n++;
+
 	if(((colonne - 1) >= 0) && ((righe + 1) < maxtab))
-		if(matrice[righe+1][colonne-1] == bomba) n++;
+		if(matrice[righe+1][colonne-1] == bomba)
+			n++;
+
+
 	return n;
 }
 
