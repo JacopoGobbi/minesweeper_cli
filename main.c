@@ -155,8 +155,7 @@ unsigned short start_playing() {
                 print_number(matrix2[i][j]);
             color(STANDARD);
         }
-        printf("\nMove with the arrow keys and select the bombs with the spacebar, check the boxes with ENTER (bombs left: %hi)",
-               bombs);
+        printf("\nMove with the arrow keys and select the bombs with the spacebar, check the boxes with ENTER");
         move_cursor_to(x, y);
         car = 'Z';
         while (car != ' ' && car != UP_KEY && car != DOWN_KEY && car != RIGHT_KEY && car != LEFT_KEY && car != '\n') {
