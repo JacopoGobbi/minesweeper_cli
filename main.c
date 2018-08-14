@@ -218,22 +218,21 @@ unsigned short check_position(unsigned short row, unsigned short column) {
     row -= 2;
     column /= 2;
     column--;
+    unsigned short foundBomb = 0;
     switch (matrix[row][column]) {
         case BOMB_CHAR:
-            return 1;
+            foundBomb = 1;
             break;
         case ' ':
             reveal_neighbors(row, column);
-            return 0;
             break;
         case '/':
-            return 0;
             break;
         default:
             matrix2[row][column] = matrix[row][column];
-            return 0;
             break;
     }
+    return foundBomb;
 }
 
 void reveal_neighbors(unsigned short row, unsigned short column) {
