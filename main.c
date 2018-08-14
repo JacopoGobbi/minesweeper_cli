@@ -1,13 +1,3 @@
-/*
-Copyleft: some rights reserved (CC), Jacopo Gobbi october 2011
-
-Opera sottostante alla licenza Creative Commons "Attribuzione - Non commerciale - Condividi allo stesso modo 3.0 Italia (CC BY-NC-SA 3.0)".
-Tu sei libero di:
-1) Attribuzione — Devi attribuire la paternità dell'opera nei modi indicati dall'autore o da chi ti ha dato l'opera in licenza e in modo tale da non suggerire che essi avallino te o il modo in cui tu usi l'opera.
-2) Non commerciale — Non puoi usare quest'opera per fini commerciali.
-3) Condividi allo stesso modo — Se alteri o trasformi quest'opera, o se la usi per crearne un'altra, puoi distribuire l'opera risultante solo con una licenza identica o equivalente a questa.
-Per ulteriori informazioni visitare la pagina web: http://creativecommons.org/licenses/by-nc-sa/3.0/it/deed.it
-*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
